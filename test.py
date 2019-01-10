@@ -1,6 +1,6 @@
-#Author: Michael Lesage
+#Author: Imad Kalboneh
 #Date created: June 25, 2017
-#Last updated; June 25, 2017
+#Last updated; January 10, 2019
 
 import os
 import time
@@ -17,25 +17,25 @@ while(True):
 	#make sure site can load
 	response = subprocess.Popen(["ping", site, "-n", '1'], stdout=subprocess.PIPE).stdout.read()
 
-	if 'Reply' in response:
+	if response != -1: 
 		#open up chrome window and load the site
 		driver = webdriver.Chrome()
 		driver.get("http://www." + site)
 
 		#find parameter names and fill them
-		f_name = driver.find_element_by_name('first-name')
+		f_name = driver.find_element_by_name('input_1.3')
 		f_name.send_keys('first name test')
 
-		l_name = driver.find_element_by_name('last-name')
+		l_name = driver.find_element_by_name('input_1.6')
 		l_name.send_keys('last name test')
 
-		phone = driver.find_element_by_name('phone')
-		phone.send_keys('9999999999')
-
-		email = driver.find_element_by_name('email')
+		email = driver.find_element_by_name('input_2')
 		email.send_keys('imad_kalboneh@hotmail.com')
 
-		case_details = driver.find_element_by_name('case-detail')
+		phone = driver.find_element_by_name('input_3')
+		phone.send_keys('9999999999')
+
+		case_details = driver.find_element_by_name('input_4')
 		case_details.send_keys('case detail test')
 
 		#driver.find_element_by_xpath("//input[@type='submit' and @value='SEND']").click()
@@ -49,4 +49,4 @@ while(True):
 		time.sleep((3600 * 24) - (time.clock() - t))
 			
 	else:
-		print 'site not found'
+		print('site not found')
