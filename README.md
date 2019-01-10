@@ -7,7 +7,7 @@ Tests from on michaelsfirm.ca
   <li>Python 3.7.0</li>
   <li>Command-line terminal</li>
 </ul>
-<h1>Setup</h1>
+<h1>Walkthrough</h1>
 <ol>
   <li>You will have to create a folder to house this Python file</li>
   <li>Copy (or move) the Seleinum driver into the same folder. You can download the driver at http://chromedriver.chromium.org/downloads </li>
